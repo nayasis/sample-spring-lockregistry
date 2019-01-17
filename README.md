@@ -4,6 +4,7 @@ spring boot sample for redis lock registry
 
 ## LockRegistry
 [LockRegistry](https://github.com/spring-cloud/spring-cloud-cluster/blob/master/spring-cloud-cluster-core/src/main/java/org/springframework/cloud/cluster/lock/LockRegistry.java) is one of spring cloud interface controlling Application lock.
+
 Application lock is similiar with ThreadLock but works between multi-instances so help to control race condition, for example in DBMS CRUD operation.
 
 ## Requirement
@@ -22,3 +23,4 @@ It is simple account/balance model in bank.
 
 User can create account and deposite/withdraw balance and transfer balance to another.
 
+You can use postman sample in [HERE](https://github.com/nayasis/sample.redislockregistry/blob/master/postman/RedisRegistryLock.postman_collection.json).
