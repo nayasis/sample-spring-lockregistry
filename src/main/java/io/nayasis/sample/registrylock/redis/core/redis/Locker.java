@@ -26,14 +26,10 @@ public class Locker {
             boolean acquired = lock.tryLock( 10, TimeUnit.SECONDS );
 
             if( acquired ) {
-
                 runnable.run();
-
                 return true;
-
-            } else {
-                return false;
             }
+            return false;
 
         } catch ( InterruptedException e ) {
             Thread.currentThread().interrupt();
