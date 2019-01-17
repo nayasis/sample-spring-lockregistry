@@ -1,5 +1,6 @@
 package io.nayasis.sample.registrylock.redis.core.redis;
 
+import io.nayasis.sample.registrylock.redis.core.exception.LockInterruptedException;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.integration.redis.util.RedisLockRegistry;
 import org.springframework.integration.support.locks.LockRegistry;
@@ -17,7 +18,7 @@ public class Locker {
         this.lockRegistry = new RedisLockRegistry( connectionFactory, registryKey, 10_000 );
     }
 
-    public boolean lock( String lockKey, Runnable runnable ) {
+    public void lock( String lockKey, Runnable runnable ) throws LockInterruptedException {
 
         Lock lock = lockRegistry.obtain( lockKey );
 
@@ -25,15 +26,14 @@ public class Locker {
 
             boolean acquired = lock.tryLock( 10, TimeUnit.SECONDS );
 
-            if( acquired ) {
-                runnable.run();
-                return true;
-            }
-            return false;
+            if( ! acquired )
+                throw new LockInterruptedException( String.format( "Failed to acquire lock [%s]", registryKey) );
+
+            runnable.run();
 
         } catch ( InterruptedException e ) {
             Thread.currentThread().interrupt();
-            throw new RuntimeException( String.format( "Interrupted in locking [%s]", registryKey) );
+            throw new LockInterruptedException( String.format( "Interrupted in locking [%s]", registryKey) );
         } finally {
             lock.unlock();
         }
