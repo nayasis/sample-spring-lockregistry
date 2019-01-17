@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\" : \"nayasis\",\r\n\t\"etc\"  : \"{ 'key' : 'AAAA', 'email' : 'what@gmail.com' }\"\r\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "{{domain}}/account",
@@ -73,7 +73,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"from\"   : 1,\n\t\"to\"     : 2,\n\t\"amount\" : 10\n\t\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "{{domain}}/account/1/deposit/100",
@@ -103,10 +103,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"from\"   : 1,\n\t\"to\"     : 2,\n\t\"amount\" : 10\n\t\n}"
+					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/account/1/withdraw/100",
+					"raw": "{{domain}}/account/1/withdraw/-100",
 					"host": [
 						"{{domain}}"
 					],
@@ -114,7 +114,7 @@
 						"account",
 						"1",
 						"withdraw",
-						"100"
+						"-100"
 					]
 				}
 			},
@@ -136,7 +136,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\" : \"nayasis\",\r\n\t\"etc\"  : \"{ 'key' : 'AAAA', 'email' : 'what@gmail.com' }\"\r\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "{{domain}}/account/1",
@@ -167,7 +167,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\" : \"nayasis\",\r\n\t\"etc\"  : \"{ 'key' : 'AAAA', 'email' : 'what@gmail.com' }\"\r\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "{{domain}}/account/all",
