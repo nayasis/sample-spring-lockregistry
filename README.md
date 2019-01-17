@@ -3,7 +3,7 @@ Redis LockRegistry sample
 spring boot sample for redis lock registry
 
 ## LockRegistry
-[LockRegistry](https://github.com/spring-cloud/spring-cloud-cluster/blob/master/spring-cloud-cluster-core/src/main/java/org/springframework/cloud/cluster/lock/LockRegistry.java) is one of spring cloud interface controlling **Distributed application lock.**
+[LockRegistry](https://github.com/spring-cloud/spring-cloud-cluster/blob/master/spring-cloud-cluster-core/src/main/java/org/springframework/cloud/cluster/lock/LockRegistry.java) is one of spring cloud interfaces controlling **Distributed application lock.**
 
 **Distributed Application lock** is similiar with ThreadLock but works between multi-instances so help to control race condition, for example in DBMS CRUD operation.
 
