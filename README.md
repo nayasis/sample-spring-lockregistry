@@ -7,20 +7,18 @@ spring boot sample for redis lock registry
 Application lock is similiar with ThreadLock but works between multi-instances so help to control race condition, for example in DBMS CRUD operation.
 
 ## Requirement
-This sample use redis lock registry implement. so if you want to run it, you must install Redis at first.
+This sample use [RedisLockRegistry](https://github.com/spring-projects/spring-integration/blob/master/spring-integration-redis/src/main/java/org/springframework/integration/redis/util/RedisLockRegistry.java) implement. so if you want to run it, you must install Redis at first.
 
-## Port
+## Port in use
 
----------------------------
-| Server | 8080           |
----------------------------
+| Kind   | Port           |
+|--------|----------------|
 | Server | 8080           |
 | Redis  | 6379 (default) |
----------------------------
 
+## Business logic
 
-## What it is ?
-It is simple sample 
+It is simple account/balance model in bank.
 
-
+User can create account and deposite/withdraw balance and transfer balance to another.
 
