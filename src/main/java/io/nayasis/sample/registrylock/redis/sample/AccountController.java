@@ -27,13 +27,13 @@ public class AccountController {
 
     @PutMapping( "/account/{accountId}/deposit/{amount}" )
     public AccountEntity deposite( @PathVariable Long accountId, @PathVariable BigDecimal amount ) {
-        isValidAmount( amount );
+        isBiggerThanZero( amount );
         return service.deposite( accountId, amount );
     }
 
     @PutMapping( "/account/{accountId}/withdraw/{amount}" )
     public AccountEntity withdraw( @PathVariable Long accountId, @PathVariable BigDecimal amount ) {
-        isValidAmount( amount );
+        isBiggerThanZero( amount );
         return service.withdraw( accountId, amount );
     }
 
@@ -44,11 +44,11 @@ public class AccountController {
 
     @PutMapping( "/account/transfer" )
     public void transfer( @RequestBody ReqTransfer request ) {
-        isValidAmount( request.getAmount() );
+        isBiggerThanZero( request.getAmount() );
         service.transfer( request );
     }
 
-    private void isValidAmount( @PathVariable BigDecimal amount ) {
+    private void isBiggerThanZero( BigDecimal amount ) {
         Assert.isTrue( amount != null && amount.compareTo( BigDecimal.ZERO ) > 0, "amount must be greater than 0" );
     }
 
