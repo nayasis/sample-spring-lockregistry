@@ -23,4 +23,4 @@ It is simple account/balance model in bank.
 
 User can create account and deposite/withdraw balance and transfer balance to another.
 
-You can use postman sample in [HERE](https://github.com/nayasis/sample.redislockregistry/blob/master/postman/RedisRegistryLock.postman_collection.json).
+You can test API via [Postman](https://www.getpostman.com) and import sample collections in [HERE](https://github.com/nayasis/sample.redislockregistry/blob/master/postman/RedisRegistryLock.postman_collection.json).
