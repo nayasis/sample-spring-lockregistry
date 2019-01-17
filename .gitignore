@@ -43,9 +43,11 @@ target/
 catalina.home_IS_UNDEFINED/
 
 # dynamic resources
-su.message.js
 /log/java
 /log/jsp
 /log/log
 /log/sql
 src/main/webapp/static/files
+
+# local test db
+SampleDB.mv.db
