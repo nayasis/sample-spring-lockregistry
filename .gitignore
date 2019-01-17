@@ -1,0 +1,51 @@
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+target/
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# TeXlipse plugin
+.texlipse
+
+# MacOS Environment
+.DS_Store
+
+# IntelliJ IDEA
+*.iml
+.idea
+
+# Eclipse
+.project
+.classpath
+.settings/
+catalina.home_IS_UNDEFINED/
+
+# dynamic resources
+su.message.js
+/log/java
+/log/jsp
+/log/log
+/log/sql
+src/main/webapp/static/files
