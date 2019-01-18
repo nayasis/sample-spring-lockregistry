@@ -1,7 +1,6 @@
 package io.nayasis.sample.registrylock.redis.sample;
 
 import io.nayasis.sample.registrylock.redis.jpa.entity.AccountEntity;
-import io.nayasis.sample.registrylock.redis.sample.vo.ReqDeposit;
 import io.nayasis.sample.registrylock.redis.sample.vo.ReqTransfer;
 import org.junit.Test;
 import org.junit.runner.RunWith;

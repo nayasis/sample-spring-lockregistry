@@ -37,12 +37,12 @@ public class AccountService {
 
     }
 
-    public AccountEntity get( Long walletId ) {
-        Optional<AccountEntity> maybeEntity = repository.findById( walletId );
+    public AccountEntity get( Long accountId ) {
+        Optional<AccountEntity> maybeEntity = repository.findById( accountId );
         if( maybeEntity.isPresent() ) {
             return maybeEntity.get();
         } else {
-            throw new RuntimeException( String.format("there is no account[%s]",walletId) );
+            throw new RuntimeException( String.format("there is no account[%s]",accountId) );
         }
     }
 

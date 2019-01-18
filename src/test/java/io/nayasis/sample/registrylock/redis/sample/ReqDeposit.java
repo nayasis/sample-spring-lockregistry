@@ -1,4 +1,4 @@
-package io.nayasis.sample.registrylock.redis.sample.vo;
+package io.nayasis.sample.registrylock.redis.sample;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
