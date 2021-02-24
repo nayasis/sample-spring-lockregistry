@@ -40,7 +40,7 @@ Default port is 8080.
 
 This sample provides simple test API, <u>/lock/**{lockkey}**</u> .
 
-- source : LockController.kt
+- source : [LockController.kt](https://github.com/nayasis/sample-spring-lockregistry/blob/master/src/main/kotlin/com/github/nayasis/sample/distributedlock/controller/LockController.kt)
 
 you can call it like below.  
 ```
@@ -52,7 +52,7 @@ It just counts 0 to 9 and sleep 1 sec on each cycle.
 
 ### Choose Lock Registry
 
-edit **distributed-lock.type' on [application.yml].
+edit **distributed-lock.type' on [application.yml](https://github.com/nayasis/sample-spring-lockregistry/blob/master/src/main/resources/application.yml).
 
 | Kind      | Implement                                 |
 | --------  | ----------------                          |
