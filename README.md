@@ -10,7 +10,7 @@ spring boot sample for [LockRegistry](https://github.com/spring-cloud/spring-clo
 ## Requirement
 
 ### Docker
-if you want to use Zookeeper Lock or Redis Lock, you must install Zookeeper or Redis first.
+if you want to use Zookeeper Lock or Redis Lock, you must install Zookeeper or Redis at first.
 you can install easily via [Docker](https://docs.docker.com/get-docker/) and [Docker-Compose](https://docs.docker.com/compose/install/).
 
 ### Zookeeper
