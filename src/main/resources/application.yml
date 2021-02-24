@@ -1,0 +1,43 @@
+spring.profiles.active: local
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:./build/testdb/locker
+  redis:
+    host: localhost
+    port: 6379
+  zookeeper:
+    address: localhost:2181
+
+distributed-lock:
+  type: local
+    # available types
+    # - local       : local lock works in single instance
+    # - redis       : lock based on Redis
+    # - zookeeper   : lock based on Zookeeper
+    # - jdbc        : lock based on DB
+    # - none        : do not use locker
+  key-prefix: merong
+  timeout:
+    connection: 1000
+    session: 30000
+  expire:
+    age: 30000
+    cron: 0,10,20,30,40,50 * * * * *  # Seconds(0~59) Minutes(0~59) Hours(0~23), Day(1~31) Month(1~12), Week(0~6 or SUN~SAT), Year (empty or 1970~2099)
+  retry:
+    count: 10
+    sleep: 200
+  jdbc:
+    #table-prefix: INT_ # specify if you want to use customized table. see detail table layout on here. [https://github.com/spring-projects/spring-integration/tree/v5.3.0.RELEASE/spring-integration-jdbc/src/main/resources/org/springframework/integration/jdbc]
+    session-timeout : 30000
+
+logging:
+  level:
+    io.undertow.request: error
+    org.apache.zookeeper: error
+    com.github.nayasis.sample: trace
+

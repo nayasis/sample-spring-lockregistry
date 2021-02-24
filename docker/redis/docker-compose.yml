@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+  redis1:
+    container_name: local-redis
+    image: redis
+    command: redis-server --port 6379
+    restart: always
+    ports:
+      - 6379:6379

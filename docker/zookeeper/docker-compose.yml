@@ -1,0 +1,9 @@
+version: '3.1'
+
+services:
+  zoo1:
+    container_name: local-zookeeper
+    image: zookeeper
+    restart: always
+    ports:
+      - 2181:2181
