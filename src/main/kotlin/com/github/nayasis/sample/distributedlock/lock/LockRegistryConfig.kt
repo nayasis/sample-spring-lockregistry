@@ -57,7 +57,7 @@ class LockRegistryConfig(
     }
 
     @Bean
-    @ConditionalOnProperty("spring.zookeeper")
+    @ConditionalOnExpression("'\${spring.zookeeper.address:}' != ''")
     fun zookeeperClient(
         @Value("\${spring.zookeeper.address}")
         address: String,
