@@ -23,6 +23,7 @@ import org.springframework.integration.support.locks.PassThruLockRegistry
 import org.springframework.integration.zookeeper.lock.ZookeeperLockRegistry
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.util.StopWatch
+import java.lang.Integer.max
 import java.net.ConnectException
 import java.util.concurrent.TimeUnit
 import javax.sql.DataSource
@@ -42,6 +43,8 @@ class LockRegistryConfig(
     val sessionTimeout: Int,
     @Value("\${distributed-lock.key-prefix:}")
     val prefix: String,
+    @Value("\${distributed-lock.retry.count:1}")
+    val retryCnt: Int,
 ) {
 
     @Bean
@@ -65,7 +68,7 @@ class LockRegistryConfig(
         val noRetry = RetryNTimes(0, 0)
         return CuratorFrameworkFactory.newClient(address, connectionTimeout, sessionTimeout, noRetry).apply {
             start()
-            if( ! blockUntilConnected(connectionTimeout, TimeUnit.MILLISECONDS) )
+            if( ! blockUntilConnected(connectionTimeout * max(retryCnt,1), TimeUnit.MILLISECONDS) )
                 throw ConnectException("Fail to connect zookeeper ($address)")
         }
     }
